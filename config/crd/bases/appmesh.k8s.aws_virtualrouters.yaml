@@ -280,6 +280,47 @@ spec:
                         - maxRetries
                         - perRetryTimeout
                         type: object
+                      timeout:
+                        description: An object that represents a grpc timeout.
+                        properties:
+                          idle:
+                            description: An object that represents idle timeout duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
+                          perRequest:
+                            description: An object that represents per request timeout
+                              duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
+                        type: object
                     required:
                     - action
                     - match
@@ -471,6 +512,47 @@ spec:
                         required:
                         - maxRetries
                         - perRetryTimeout
+                        type: object
+                      timeout:
+                        description: An object that represents a http timeout.
+                        properties:
+                          idle:
+                            description: An object that represents idle timeout duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
+                          perRequest:
+                            description: An object that represents per request timeout
+                              duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
                         type: object
                     required:
                     - action
@@ -664,6 +746,47 @@ spec:
                         - maxRetries
                         - perRetryTimeout
                         type: object
+                      timeout:
+                        description: An object that represents a http timeout.
+                        properties:
+                          idle:
+                            description: An object that represents idle timeout duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
+                          perRequest:
+                            description: An object that represents per request timeout
+                              duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
+                        type: object
                     required:
                     - action
                     - match
@@ -722,6 +845,28 @@ spec:
                             type: array
                         required:
                         - weightedTargets
+                        type: object
+                      timeout:
+                        description: An object that represents a tcp timeout.
+                        properties:
+                          idle:
+                            description: An object that represents idle timeout duration.
+                            properties:
+                              unit:
+                                description: A unit of time.
+                                enum:
+                                - s
+                                - ms
+                                type: string
+                              value:
+                                description: A number of time units.
+                                format: int64
+                                minimum: 0
+                                type: integer
+                            required:
+                            - unit
+                            - value
+                            type: object
                         type: object
                     required:
                     - action
